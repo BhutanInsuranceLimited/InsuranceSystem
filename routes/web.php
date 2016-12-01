@@ -9,3 +9,7 @@ Route::get('prospect-registration', function(){
 Route::get('leads', function(){
 	return view('insurance.Leads.lead');
 });
+
+Route::post('login', function (){
+    dd(Input::all());
+});

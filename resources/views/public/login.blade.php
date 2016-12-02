@@ -4,7 +4,7 @@
         <div class="page-header-inner">
             <div class="page-logo">
                 <a href="">
-                    <img src="public/admin/layout/images/logo.png" alt="logo" class="logo-default"/>
+                    <img src="{{ asset('public/admin/layout/images/logo.png') }}" alt="logo" class="logo-default"/>
                 </a>
                 <div class="menu-toggler sidebar-toggler hide">
                 </div>

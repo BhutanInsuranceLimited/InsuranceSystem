@@ -16,7 +16,7 @@
     <div class="content margin-top-20" id="login_form">
         <div id="error"></div>
         <!-- BEGIN LOGIN FORM -->
-        {!! Form::open(['url' => 'login', 'method'=>'POST', 'id'=>'']) !!}
+        {!! Form::open(['url' => 'login', 'method'=>'POST', 'id'=>'loginForm']) !!}
             {{ csrf_field() }}
             <h3 class="form-title"><i class="glyphicon glyphicon-lock"></i> Login </h3>
             <div class="form-group margin-bottom-15">

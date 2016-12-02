@@ -30,6 +30,7 @@ class LoginController extends Controller
 
 
     public function postLogin(Request $request){
+        return 'ok';
         dd($request->all());
     }
 }

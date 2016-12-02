@@ -58,7 +58,7 @@ $('document').ready(function()
             {
                 if(response=="ok"){
                     $("#btn-login").html('<i class="fa fa-refresh fa-spin fa-3x fa-fw margin-bottom"></i> &nbsp; Signing In ...');
-                    setTimeout(' window.location.href = "customer-registration"; ',2000);
+                    setTimeout(' window.location.href = "home"; ',2000);
                 }else{
                     $("#error").fadeIn(1000, function(){
                         $("#error").html('<div class="alert alert-danger"> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; '+response+' !</div>');

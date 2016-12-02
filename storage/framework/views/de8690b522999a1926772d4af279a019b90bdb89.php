@@ -1,4 +1,7 @@
 <?php $__env->startSection('content'); ?>
+<!-- BEGIN SIDEBAR -->
+<?php echo $__env->make('common.sidemenu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<!-- END SIDEBAR -->
 <div class="page-content-wrapper">
 		<div class="page-content">
 			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM -->

@@ -1,6 +1,9 @@
 <div class="page-sidebar-wrapper">
 	<div class="page-sidebar navbar-collapse collapse">
+        <!--Party Menu-->
+        <!--end of Party Menu-->
 		<ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+
 			<li class="sidebar-search-wrapper margin-top-20 margin-bottom-20" style="border-bottom: 1px solid #dbdbdb;">
 				<div class="user-panel">
 					<div class="pull-left image">

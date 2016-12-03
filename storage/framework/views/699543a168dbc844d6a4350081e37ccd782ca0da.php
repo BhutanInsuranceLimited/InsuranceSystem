@@ -1,11 +1,7 @@
 <?php $__env->startSection('content'); ?>
-    <!--Party Menu-->
-    <?php echo $__env->make('common.PartyMenu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-    <!--end of Party Menu-->
 	<!-- BEGIN SIDEBAR -->
-	<?php echo $__env->make('common.sidemenu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php echo $__env->make('Insurance.common.PartyMenu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 	<!-- END SIDEBAR -->
-
 	<div class="page-content-wrapper">
 		<div class="page-content">
 			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM -->
@@ -140,14 +136,14 @@
 					</div>
 				</div>
 			</div>
+			<div class="tab-content">
+				<!-- ##################Leads######################## -->
+				<?php echo $__env->make('Insurance.Leads.leads', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+				<!-- #########################End of Lead ###########################-->
 
-			<!-- ##################Leads######################## -->
-		<?php echo $__env->make('Insurance.Leads.leads', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-		<!-- #########################End of Lead ###########################-->
-
-			<!-- #########################quotation ###########################-->
-			<?php echo $__env->make('Insurance.BussinessDevelopment.Motors.Private.quotation', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-
+				<!-- #########################quotation ###########################-->
+				<?php echo $__env->make('Insurance.BussinessDevelopment.Motors.Private.quotation', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+			</div>
 		</div>
 	</div>
 

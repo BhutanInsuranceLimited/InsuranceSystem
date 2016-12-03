@@ -1,12 +1,8 @@
 @extends('layout.master')
 @section('content')
-    <!--Party Menu-->
-    @include('common.PartyMenu')
-    <!--end of Party Menu-->
 	<!-- BEGIN SIDEBAR -->
-	@include ('common.sidemenu')
+	@include('Insurance.common.PartyMenu')
 	<!-- END SIDEBAR -->
-
 	<div class="page-content-wrapper">
 		<div class="page-content">
 			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM -->
@@ -141,14 +137,14 @@
 					</div>
 				</div>
 			</div>
+			<div class="tab-content">
+				<!-- ##################Leads######################## -->
+				@include ('Insurance.Leads.leads')
+				<!-- #########################End of Lead ###########################-->
 
-			<!-- ##################Leads######################## -->
-		@include ('Insurance.Leads.leads')
-		<!-- #########################End of Lead ###########################-->
-
-			<!-- #########################quotation ###########################-->
-			@include ('Insurance.BussinessDevelopment.Motors.Private.quotation')
-
+				<!-- #########################quotation ###########################-->
+				@include ('Insurance.BussinessDevelopment.Motors.Private.quotation')
+			</div>
 		</div>
 	</div>
 

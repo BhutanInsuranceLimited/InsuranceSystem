@@ -1,7 +1,8 @@
 @extends('layout.master')
 @section('content')
 <!-- BEGIN SIDEBAR -->
-@include ('common.sidemenu')
+
+@include('common.sidemenu')
 <!-- END SIDEBAR -->
 <div class="page-content-wrapper">
 		<div class="page-content">

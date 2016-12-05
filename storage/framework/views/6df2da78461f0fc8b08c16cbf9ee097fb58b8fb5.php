@@ -141,10 +141,12 @@
 					<a href="#tab_2" data-toggle="tab">
 						Policy Details</a>
 				</li>
+
 				<li>
 					<a href="#tab_3" data-toggle="tab">
 						Previous Insurance History </a>
 				</li>
+
 				<li>
 					<a href="#tab_4" data-toggle="tab">
 						Renewal Details </a>

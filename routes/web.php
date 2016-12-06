@@ -13,3 +13,6 @@ Route::get('/', function(){
     return view('public.login');
 });
 //Route::post('login', 'Auth\LoginController@postLogin');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

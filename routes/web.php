@@ -9,14 +9,18 @@ Route::get('prospect-registration', function(){
 Route::get('leads', function(){
 	return view('insurance.Leads.lead');
 });
-Route::get('/', function(){
-    return view('public.login');
-});
+
 //Route::post('login', 'Auth\LoginController@postLogin');
-Auth::routes();
+// Authentication routes...
+Route::get('login', 'AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
-Route::get('/home', 'HomeController@index');
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::controllers([
+    'password' => 'Auth\PasswordController',
+]);

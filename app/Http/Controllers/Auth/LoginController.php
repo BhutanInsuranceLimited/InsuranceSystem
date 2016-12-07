@@ -1,36 +1,42 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Illuminate\Foundation\Auth;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Foundation\Auth\RedirectsUsers;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Lang;
-use Illuminate\Support\Facades\Cache;
 
-class LoginController extends Controller
+trait RegistersUsers
 {
-    use AuthenticatesUsers;
+    use RedirectsUsers;
 
-
-    protected $redirectTo = '/home';
-
-    public function __construct()
+    /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getRegister()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        return view('auth.register');
     }
 
-    public function getLogin(){
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function postRegister(Request $request)
+    {
+        $validator = $this->validator($request->all());
 
-        return view('public.login');
-    }
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
 
+        Auth::login($this->create($request->all()));
 
-    public function postLogin(Request $request){
-        return 'ok';
-        dd($request->all());
+        return redirect($this->redirectPath());
     }
 }

@@ -16,7 +16,7 @@
 	<div class="collapse" id="quotation_main">
 		<div class="col-md-12 margin-top-10">
 			<div class="tabbable tabbable-custom boxless tabbable-reversed">
-				<!-- ul class="nav nav-tabs">
+				{{--<ul class="nav nav-tabs">
                     <li class="active">
                         <a href="#tab_0" data-toggle="tab">
                         </a>
@@ -25,7 +25,7 @@
                         <a href="#tab_1" data-toggle="tab">
                         </a>
                     </li>
-                </ul-->
+                </ul>--}}
 			</div>
 		</div>
 

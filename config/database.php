@@ -75,7 +75,7 @@ return [
             'password' => env('DB_PASSWORD', 'sa123'),
             'charset' => 'utf8',
             'prefix' => '',
-            'schema' => 'public',
+            'schema' => 'security',
             'sslmode' => 'prefer',
         ],
 

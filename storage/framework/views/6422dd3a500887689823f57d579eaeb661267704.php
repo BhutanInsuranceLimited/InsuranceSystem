@@ -23,7 +23,7 @@
             <div class="form-group margin-bottom-15">
                 <?php echo Form::label('user_id', 'User ID', ['class'=>'control-label']); ?>
 
-                <?php echo Form::text('user_id', NULL, ['class'=>'form-control', 'placeholder'=>'User ID']); ?>
+                <?php echo Form::text('email', NULL, ['class'=>'form-control', 'placeholder'=>'User ID']); ?>
 
             </div>
             <div class="form-group margin-bottom-15">

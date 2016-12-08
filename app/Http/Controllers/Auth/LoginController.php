@@ -1,42 +1,60 @@
 <?php
 
-namespace Illuminate\Foundation\Auth;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Lang;
 
-trait RegistersUsers
+class LoginController extends Controller
 {
-    use RedirectsUsers;
+    /*
+    |--------------------------------------------------------------------------
+    | Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles authenticating users for the application and
+    | redirecting them to your home screen. The controller uses a trait
+    | to conveniently provide its functionality to your applications.
+    |
+    */
+
+    use AuthenticatesUsers;
 
     /**
-     * Show the application registration form.
+     * Where to redirect users after login.
      *
-     * @return \Illuminate\Http\Response
+     * @var string
      */
-    public function getRegister()
+    protected $redirectTo = '/home';
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        return view('auth.register');
+        $this->middleware('guest', ['except' => 'logout']);
     }
 
-    /**
-     * Handle a registration request for the application.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function postRegister(Request $request)
+    protected function sendLockoutResponse(Request $request)
     {
-        $validator = $this->validator($request->all());
+        $seconds = $this->limiter()->availableIn(
+            $this->throttleKey($request)
+        );
 
-        if ($validator->fails()) {
-            $this->throwValidationException(
-                $request, $validator
-            );
+        $message = Lang::get('auth.throttle', ['seconds' => $seconds]);
+
+        if ($request->ajax()) {
+            return response()->json([
+                'error' => $message
+            ], 401);
         }
 
-        Auth::login($this->create($request->all()));
-
-        return redirect($this->redirectPath());
+        return redirect()->back()
+            ->withInput($request->only($this->username(), 'remember'))
+            ->withErrors([$this->username() => $message]);
     }
 }

@@ -21,7 +21,7 @@
             <h3 class="form-title"><i class="glyphicon glyphicon-lock"></i> Login </h3>
             <div class="form-group margin-bottom-15">
                 {!! Form::label('user_id', 'User ID', ['class'=>'control-label']) !!}
-                {!! Form::text('user_id', NULL, ['class'=>'form-control', 'placeholder'=>'User ID']) !!}
+                {!! Form::text('email', NULL, ['class'=>'form-control', 'placeholder'=>'User ID']) !!}
             </div>
             <div class="form-group margin-bottom-15">
                 {!! Form::label('password', 'Password', ['class'=>'control-label']) !!}

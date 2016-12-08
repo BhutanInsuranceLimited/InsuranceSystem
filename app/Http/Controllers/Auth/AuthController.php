@@ -24,7 +24,7 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
 
-    private $redirectTo = '/';
+    private $redirectTo = '/login';
 
     private $maxLoginAttempts = 3;
 
@@ -46,7 +46,7 @@ class AuthController extends Controller
      */
     public function getLogin()
     {
-        return view('auth.login');
+        return view('public.login');
     }
 
     protected function validator(array $data)
